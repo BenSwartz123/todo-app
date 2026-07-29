@@ -1,6 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import {
   createTask,
   updateTask,
@@ -38,6 +39,7 @@ export async function updateTaskAction(formData: FormData) {
   const id = Number(formData.get('id'));
   updateTask(id, parse(formData));
   revalidatePath('/');
+  redirect('/');
 }
 
 export async function archiveTaskAction(formData: FormData) {

@@ -70,10 +70,13 @@ export default async function Home({
                 </div>
                 {t.description && <p className="text-sm mt-1">{t.description}</p>}
               </div>
-              <form action={archiveTaskAction}>
-                <input type="hidden" name="id" value={t.id} />
-                <button type="submit" className="text-sm underline">Archive</button>
-              </form>
+              <div className="flex gap-3 shrink-0">
+                <a href={`/tasks/${t.id}`} className="text-sm underline">Edit</a>
+                <form action={archiveTaskAction}>
+                  <input type="hidden" name="id" value={t.id} />
+                  <button type="submit" className="text-sm underline">Archive</button>
+                </form>
+              </div>
             </div>
           </li>
         ))}
