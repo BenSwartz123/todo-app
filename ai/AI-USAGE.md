@@ -2,7 +2,7 @@
 
 Tool: Claude (web interface), Claude Opus 5.
 
-Full transcripts are in `ai-transcripts/`, one file per working session:
+Full transcripts are in this folder (`ai/`), one file per working session:
 
 | File | Session | Covers |
 | --- | --- | --- |
