@@ -17,6 +17,9 @@ Check your version before starting:
 ```bash
 node --version
 ```
+The minimum version is declared in `package.json` under `engines`, so `npm install`
+warns if the installed version is too low. A `.nvmrc` file is also included — if
+you use nvm, `nvm use` in the project root will switch to a suitable version.
 
 ## Install
 
