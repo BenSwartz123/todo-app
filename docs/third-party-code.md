@@ -41,3 +41,7 @@ else's machine. It also means the project has no database dependency to declare.
 No test framework is installed. The suite uses Node's built-in test runner
 (`node --test`) and `node:assert`, for the same reason — one fewer dependency
 that a clean clone has to resolve.
+
+---
+
+AI Declaration: The preceding document was generated and edited with the assistance of the following: Claude-Web[Claude Opus 5]

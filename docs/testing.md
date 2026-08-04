@@ -53,3 +53,7 @@ Isolation was checked rather than assumed, in two ways:
   way. All four tests passed, confirming they do not read it.
 - The suite was run from a fresh clone of the repository, in a new shell, with no
   `data/` directory present at all. All four tests passed.
+
+  ---
+
+AI Declaration: The preceding document was generated and edited with the assistance of the following: Claude-Web[Claude Opus 5]

@@ -74,3 +74,7 @@ database.
 These instructions were checked by cloning the repository into a fresh directory
 in a new shell, then running only the commands above. The application installed,
 tested and started with no additional steps.
+
+---
+
+AI Declaration: The preceding document was generated and edited with the assistance of the following: Claude-Web[Claude Opus 5]

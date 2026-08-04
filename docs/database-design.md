@@ -105,3 +105,7 @@ file instead.
 
 The connection sets `PRAGMA journal_mode = WAL` and `PRAGMA foreign_keys = ON`,
 the latter because SQLite does not enforce foreign keys by default.
+
+---
+
+AI Declaration: The preceding document was generated and edited with the assistance of the following: Claude-Web[Claude Opus 5]

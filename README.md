@@ -30,3 +30,13 @@ seed step.
 | [docs/testing.md](docs/testing.md) | What the tests cover and how they are isolated |
 
 AI usage transcripts and the usage declaration are in [`ai/`](ai/).
+
+---
+
+## AI Usage
+
+This repository makes use of AI code generation using the following tools: Claude-Web[Claude Opus 5].
+
+This repository does not use AI code review and does not use AI in-line editing tools
+
+AI Declaration: The preceding document was generated and edited with the assistance of the following: Claude-Web[Claude Opus 5]
