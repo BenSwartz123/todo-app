@@ -21,6 +21,8 @@ The minimum version is declared in `package.json` under `engines`, so `npm insta
 warns if the installed version is too low. A `.nvmrc` file is also included — if
 you use nvm, `nvm use` in the project root will switch to a suitable version.
 
+npm install now fails outright, with the required version, if Node is too old.
+
 ## Install
 
 From a clean clone:
