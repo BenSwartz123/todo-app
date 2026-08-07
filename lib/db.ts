@@ -24,3 +24,14 @@ export function getDb(): DatabaseSync {
   }
   return g.__db;
 }
+/** Close the connection and drop the cached handle, so the next getDb()
+ *  reopens the file. Used by the tests to prove data is on disk, and to
+ *  release the file before deleting it — Windows will not delete an open file. */
+export function closeDb(): void {
+  try {
+    g.__db?.close();
+  } catch {
+    // already closed
+  }
+  g.__db = undefined;
+}
