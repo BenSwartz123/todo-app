@@ -18,6 +18,20 @@
 | `tailwindcss`, `@tailwindcss/postcss` | Utility CSS, installed by `create-next-app` and kept because the interface needs only spacing, borders and one highlight colour, which does not justify a separate stylesheet. |
 | `eslint`, `eslint-config-next` | Linting with the Next.js recommended rules, installed by `create-next-app`. |
 
+## Deliberately not used: `next/font`
+
+`create-next-app` scaffolds `app/layout.tsx` with `next/font/google`, which
+loads the Geist typefaces. It was removed.
+
+`next/font` fetches the font files from Google at **build time**, not at page
+load, so `npm run build` fails outright on a machine without internet access.
+That is a poor property for an application specified as local-first with no
+network component: nothing else in this project reaches the network, and a
+default from the scaffold should not be the one thing that does.
+
+The `body` rule in `app/globals.css` already sets a system font stack, so
+removing it changes nothing visually and removes the last outbound request.
+
 ## Deliberately not used: a SQLite driver
 
 The obvious choice for SQLite in Node is `better-sqlite3`. It is **not** used
@@ -35,6 +49,7 @@ same synchronous prepared-statement API and reads the same database file format.
 This is an improvement rather than a workaround: it removes a native build step
 from `npm install` entirely, so a clean clone cannot fail to compile on someone
 else's machine. It also means the project has no database dependency to declare.
+
 
 ## Test tooling
 
