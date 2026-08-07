@@ -10,6 +10,7 @@ Full transcripts are in this folder (`ai/`), one file per working session:
 | `session-2-ui.md` | 2 | Query layer, list UI, create/archive/sort, editing |
 | `session-3-tests.md` | 3 | Test suite |
 | `session-4-docs.md` | 4 | Documentation and clean-clone rehearsal |
+| `session-5-review.md` | 5 | Rubric review of the finished repository; test and documentation fixes |
 
 This file summarises how the tool was used and points to the specific moments in
 those transcripts where its output was rejected or corrected.
@@ -119,6 +120,27 @@ the database is created automatically on first run and that no undocumented step
 is required.
 
 **Traceable to:** `docs/running-it.md`, into which that section was later split.
+
+### 8. Found a test that was passing without testing anything (session 5)
+
+The finished repository was reviewed against the marking rubric. The review
+identified a fault in the existing test suite that had not been visible when the
+suite was written: the sort test asserted only that the list it received was
+ordered, using rows that earlier tests happened to have created. Run in
+isolation, against an empty table, it passed vacuously — an empty list is
+trivially sorted.
+
+This is the reverse of the corrections above: here the assistant identified the
+fault and the author's own earlier work was what needed correcting. It is
+recorded as such rather than claimed the other way round.
+
+The test now creates three tasks whose topic, status and due-date orderings
+disagree with one another, so a broken `ORDER BY` cannot satisfy all three
+assertions. Two further tests were added at the same time: one confirming the
+`CHECK` constraint rejects an invalid status at the database rather than only in
+the UI, and one that closes and reopens the connection to confirm persistence.
+
+**Traceable to:** `tests/tasks.test.ts`, and `closeDb` in `lib/db.ts`.
 
 ---
 
