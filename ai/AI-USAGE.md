@@ -51,7 +51,7 @@ dependency dropped. The application uses Node's built-in `node:sqlite` instead.
 
 **Traceable to:** `package.json` contains no database dependency at all;
 `lib/db.ts` imports `DatabaseSync` from `node:sqlite`; the reasoning is recorded
-in the README under "Deliberately not used: a SQLite driver".
+in `docs/third-party-code.md` under "Deliberately not used: a SQLite driver".
 
 This also improved the result rather than merely working around the problem —
 there is now no native build step in `npm install`, so the clean clone cannot
@@ -118,7 +118,7 @@ only, and walking all seven functional steps from the brief. This confirmed that
 the database is created automatically on first run and that no undocumented step
 is required.
 
-**Traceable to:** the "Running It" section of the README.
+**Traceable to:** `docs/running-it.md`, into which that section was later split.
 
 ---
 
@@ -134,4 +134,4 @@ visible in the transcripts:
 - **Topic as a separate table rather than a text column.** The assistant flagged
   this as arguable, noting a plain text column would be simpler and defensible
   for a single-user application. The two-table design was kept for the reasons
-  given in the README's Database Design section.
+  given in `docs/database-design.md`.
